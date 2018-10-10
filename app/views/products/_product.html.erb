@@ -1,7 +1,10 @@
 <article class="product">
   <header>
     <%= link_to product do %>
-      <%= image_tag product.image.thumb, alt: product.name %>
+      <%= image_tag product.image.thumb, alt: product.name %> 
+      <% if product.quantity == 0 %>
+      <span class = "badge">SOlD OUT!</span>
+      <% end %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>
