@@ -28,6 +28,7 @@ puts "Finding or Creating Categories ..."
 cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
+cat4 = Category.find_or_create_by! name: 'Sports'
 
 ## PRODUCTS
 
@@ -132,5 +133,65 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+cat4.products.create!({
+  name:  'The Surfer Snowboard 2019',
+  description: 'For being so new to the scene, the surfer boards from Bataleon have made a name for themselves quickly. The Bataleon The Surfer Snowboard will turn off piste riding into a real surf-like experience thanks to a directional swallow-tail shape that works in conjunction with triple base technology for the ultimate white wave experience. With loads of fun to be had both in and out of the resort, this is a no brainer for your quiver this season.',
+  image: open_asset('snowboard1.jpg'),
+  quantity: 7,
+  price: 799.95
+})
+
+cat4.products.create!({
+  name:  'GNU Spasym Snowboard 2019',
+  description: "Forest Bailey is at it again with the all new GNU Spasym Snowboard. This time focusing on the big mountain, side country lines you've been eyeing. Its C3 camber is perfect for technical run ins and powering out of turns while an aspen/paulownia core packs the power for you to make big hits and put 'em to your feet with confidence. Sporting an asymmetrical geometry the GNU Spasym Snowboard brings Forest's distinguished freestyle flair to big, freeride terrain.",
+  image: open_asset('snowboard4.jpg'),
+  quantity: 5,
+  price: 599.95
+})
+
+cat4.products.create!({
+  name:  'CAPiTA Spring Break Twin Snowboard 2019',
+  description: "Grab a CAPiTA Spring Break Twin, some swim trunks and get ready for a good time. This board was made for the wild souls out there who get sendy in the park and carve with unmatched style. The asymmetrical sidecut balances out the natural unevenness of the body and makes for a consistent ride from edge to edge. Glide on powder and charge through the park with the satisfying Shovelhead tip and All-Terrain V2 profile that gives you the best of both worlds - camber for power and flat to rockered zones for float and playfulness. Get yourself into some trouble this spring break with the CAPiTA Spring Break Twin Snowboard.",
+  image: open_asset('snowboard3.jpg'),
+  quantity: 2,
+  price: 499.95
+})
+cat4.products.create!({
+  name:  'Bataleon Party Wave Snowboard 2019',
+  description: "he Bataleon Party Wave Snowboard is your ticket to the white room. Choose this short-wide board 5cm-10cm shorter than your normal all-mountain board and enjoy the ride! You won't miss a beat, on or off piste, thanks to triple base shaping and SideKick technology for improved float and turn initiation. Whether you're digging trenches or slashing the white wave, there's no stopping this party.",
+  image: open_asset('snowboard2.jpg'),
+  quantity: 3,
+  price: 399.95
+})
+
+
+User.create!({
+  first_name:"Teri",
+  last_name: "Harrison",
+  email: "uer1@jungle.com",
+  password:"123456"
+})
+
+User.create!({
+  first_name: "Lee",
+  last_name: "Arnold",
+  email: "uer2@jungle.com",
+  password:"123456"
+})
+
+r1 = Product.find_by! id: 1
+r2 = Product.find_by! id: 2
+
+r1.reviews.create!({
+  user_id: 1,
+  description: "don't buy it bad",
+  rating: 0
+})
+
+r2.reviews.create!({
+  user_id: 2,
+  description: "return it",
+  rating: 2
+})
 
 puts "DONE!"
