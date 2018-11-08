@@ -1,10 +1,13 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.
+```
+Demonstration of ability to work on a pre-existing code base.
+```
 
 
 ## Setup
-
+```
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
 3. Create `config/database.yml` by copying `config/database.example.yml`
@@ -14,12 +17,25 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 7. Sign up for a Stripe account
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
-
+```
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
+
+### Features Added
+
+- Admin - add and remove products
+- Admin - add and remove categories
+- Admin - basic http access authentication
+- User - register and login
+- User - create and delete own review
+- User - create and delete own review
+- User - view reviews left by others
+- User - checkout with items in cart
+- User - see details about an product
+- User - emailed a receipt upon order completion
 
 ## Dependencies
 
